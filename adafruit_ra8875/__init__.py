@@ -3,7 +3,7 @@ import time
 import spidev
 import CHIP_IO.GPIO as GPIO
 from adafruit_gfx import *
-# from Adafruit_RA8875_h import *
+from Adafruit_RA8875_h import *
 
 # spi_speed = 1000000
 
