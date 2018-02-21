@@ -1,4 +1,4 @@
-from Adafruit_RA8875 import *
+from adafruit_ra8875 import *
 from time import sleep
 import CHIP_IO.GPIO as GPIO
 import CHIP_IO.OverlayManager as OM
