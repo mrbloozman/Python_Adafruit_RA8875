@@ -2,4 +2,8 @@ setup.py
 Adafruit_RA8875.egg-info/PKG-INFO
 Adafruit_RA8875.egg-info/SOURCES.txt
 Adafruit_RA8875.egg-info/dependency_links.txt
+Adafruit_RA8875.egg-info/requires.txt
 Adafruit_RA8875.egg-info/top_level.txt
+adafruit_ra8875/Adafruit_RA8875_h.py
+adafruit_ra8875/__init__.py
+adafruit_ra8875/examples/buildtest.py

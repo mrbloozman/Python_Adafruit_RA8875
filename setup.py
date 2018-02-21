@@ -2,12 +2,12 @@ from setuptools import setup, find_packages
 setup(
     name="Adafruit_RA8875",
     version="0.1",
-    packages=find_packages(),
+    packages=['adafruit_ra8875','adafruit_ra8875.examples'],
     # scripts=['say_hello.py'],
 
     # Project uses reStructuredText, so ensure that the docutils get
     # installed or upgraded on the target machine
-    # install_requires=['Python_Adafruit_RA8875_h>=0.1'],
+    install_requires=['Adafruit_GFX>=0.1'],
 
     package_data={
         # If any package contains *.txt or *.rst files, include them:
