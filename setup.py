@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 setup(
-    name="Python_Adafruit_RA8875",
+    name="Adafruit_RA8875",
     version="0.1",
     packages=find_packages(),
     # scripts=['say_hello.py'],

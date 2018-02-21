@@ -1,0 +1,5 @@
+setup.py
+Adafruit_RA8875.egg-info/PKG-INFO
+Adafruit_RA8875.egg-info/SOURCES.txt
+Adafruit_RA8875.egg-info/dependency_links.txt
+Adafruit_RA8875.egg-info/top_level.txt
