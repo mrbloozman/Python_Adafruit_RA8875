@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 setup(
     name="Adafruit_RA8875_sim",
-    version="0.1",
+    version="0.1.1",
     # packages=['adafruit_ra8875_sim'],
     packages=find_packages(),
     # scripts=['say_hello.py'],
