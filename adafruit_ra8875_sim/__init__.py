@@ -4,7 +4,7 @@ import sys
 
 # port of Adafruit_RA8875.cpp
 from adafruit_gfx import *
-from adafruit_ra8875_sim.Adafruit_RA8875_h import *
+from .Adafruit_RA8875_h import *
 
 
 ######################################################################
