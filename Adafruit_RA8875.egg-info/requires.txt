@@ -1,3 +1,0 @@
-Adafruit_GFX>=0.1
-CHIP_IO>=0.7.1
-spidev>=3.3

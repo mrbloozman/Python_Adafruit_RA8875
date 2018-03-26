@@ -53,6 +53,7 @@ class Adafruit_RA8875(GFX):
 		pass
 
 	def initialize(self):
+		pygame.init()
 		self._screen = pygame.display.set_mode([self.width(), self.height()])
 		pygame.display.flip()
 
@@ -107,8 +108,14 @@ class Adafruit_RA8875(GFX):
 	# @args bgColor[in]   The RGB565 colot to use for the background
 	######################################################################
 
-	def rgb(self,color):
-		return ((color & 0xFF0000)>>16,(color & 0xFF00)>>8,(color & 0xFF))
+	def rgb(self, color):
+		r5 = color >> 11
+		g6 = (color & 0b0000011111100000)>>5
+		b5 = color & 0b11111
+		r = r5 << 3
+		g = g6 << 2
+		b = b5 << 3
+		return r, g, b
 
 	def textColor(self, foreColor, bgColor):
 		# Set Fore Color
@@ -179,8 +186,8 @@ class Adafruit_RA8875(GFX):
 		# for i in range(ln):
 		# 	self.writeData(ord(buffer[i]))
 
-		font = pygame.font.SysFont(None,8*self._textScale)
-		font_surface = font.render(buffer, False, self._fg, self._bg)
+		f = pygame.font.SysFont(None,8*self._textScale)
+		font_surface = f.render(buffer, False, self._fg, self._bg)
 		self._screen.blit(font_surface,self._cursor)
 		pygame.display.flip()
 

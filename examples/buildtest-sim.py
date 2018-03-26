@@ -16,8 +16,10 @@ print("RA8875 start")
 
 # /* Initialise the display using 'RA8875_480x272' or 'RA8875_800x480' */
 if not tft.begin(RA8875sizes.RA8875_800x480):
-	print("RA8875 Not Found!")
-	raise
+	try:
+		Exception("RA8875 Not Found!")
+	except Exception as e:
+		print(e)
 
 print("Found RA8875")
 
@@ -72,6 +74,10 @@ tft.fillCurve(50, 100, 78, 38, 2, RA8875_WHITE)
 # GPIO.setup(RA8875_INT, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
 tft.touchEnable(True)
+tft.textEnlarge(2)
+tft.textColor(RA8875_YELLOW, RA8875_BLACK)
+tft.textSetCursor(50,25)
+tft.textWrite('testing textWrite',0)
 
 print("Status: " + str(tft.readStatus()))
 print("Waiting for touch events ...")
