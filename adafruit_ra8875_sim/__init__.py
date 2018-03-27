@@ -186,7 +186,8 @@ class Adafruit_RA8875(GFX):
 		# for i in range(ln):
 		# 	self.writeData(ord(buffer[i]))
 
-		f = pygame.font.SysFont(None,8*self._textScale)
+		# f = pygame.font.SysFont(None,16*(self._textScale+1))
+		f = pygame.font.Font('FreeMono.ttf',13*(self._textScale+1))
 		font_surface = f.render(buffer, False, self._fg, self._bg)
 		self._screen.blit(font_surface,self._cursor)
 		pygame.display.flip()
@@ -256,8 +257,7 @@ class Adafruit_RA8875(GFX):
 		# self.writeCommand(RA8875_DCR)
 		# self.writeData(RA8875_DCR_LINESQUTRI_STOP | RA8875_DCR_DRAWSQUARE)
 		# self.writeData(RA8875_DCR_LINESQUTRI_START | RA8875_DCR_FILL | RA8875_DCR_DRAWSQUARE)
-		pass
-		# ToDo
+		return
 
 
 	######################################################################
@@ -314,7 +314,7 @@ class Adafruit_RA8875(GFX):
 
 	def drawRect(self, x, y, w, h, color):
 		self.rectHelper(x, y, x+w, y+h, color, False)
-		pygame.display.flip()
+
 
 	######################################################################
 	# Draws a HW accelerated filled rectangle on the display
@@ -473,9 +473,11 @@ class Adafruit_RA8875(GFX):
 
 	def rectHelper(self, x, y, w, h, color, filled):
 		if filled:
-			pygame.gfxdraw.rectangle(self._screen,(x,y,w,h),self.rgb(color))
+			pygame.gfxdraw.box(self._screen,(x,y,w-x,h-y),self.rgb(color))
 		else:
-			pygame.gfxdraw.box(self._screen,(x,y,w,h),self.rgb(color))
+
+			pygame.gfxdraw.rectangle(self._screen,(x,y,w-x,h-y),self.rgb(color))
+		pygame.display.flip()
 
 	######################################################################
 	# Helper function for higher level triangle drawing code
